@@ -38,6 +38,7 @@ header {
 .Naveg_Logo {
     text-align: left;                     /* Alineación hacia la izquierda */
     padding-left: 10px;                   /* Espacio entre el borde y el contenido */
+    position: relative;                   /* Posicionamiento relativo para el logo */
 }
 /* Imagen del logo */
 .Naveg_Logo img {
@@ -48,13 +49,16 @@ header {
 /* Título al lado del logo */
 .Naveg_Logo h1 {
     font-family: Arial, Helvetica, sans-serif;   /* Fuente del texto */
-    font-size: 40px;                             /* Tamaño del texto */
+    font-size: 30px;                             /* Tamaño del texto */
     display: inline-block;                       /* Para que aparezca junto a la imagen */
     margin-left: 10px;                           /* Margen externo de 10px en el lado izquierdo */
+    position: absolute;                          /* Posicionamiento absoluto para el título */
+    margin-top: 25px;                            /* Margen superior de 25px */
 }
 .Naveg_Link {
     text-align: right;                    /* Alineación de los links a la derecha */
     padding-right: 10px;                  /* Espacio interno de 10px en el lado derecho */
+    position: relative;                  /* Posicionamiento relativo para los links */
 }
 .Naveg_Link a {
     text-decoration: none;                /* Sin subrayado */
@@ -74,6 +78,9 @@ header {
     margin-left: 25px;                      /* Margen externo de 25px en el lado izquierdo */
     cursor: pointer;                        /* Cursor tipo mano apuntando */
     border-radius: 5px;                     /* Bordes redondeados */
+}
+.Naveg_Link button:hover {
+    background-color: var(--color-hover);       /* Cambia de color al pasar el mouse */
 }
 /* Main */
 .contenido {
@@ -116,8 +123,44 @@ header {
 .boton_buy:hover {
     background-color: var(--color-hover);       /* Cambia de color al pasar el mouse */
 }
-/* móviles (max-width: 768px) */
-@media (max-width: 768px) {
+/* Footer */
+footer p {
+    text-align: center;                     /* Alineación centrada */
+    font-size: 18px;                        /* Tamaño de fuente */
+    color: var(--color-texto);              /* Color del texto según variable CSS */
+    padding: 20px;                          /* Espacio interno de 20px en todos los lados */
+    background-color: var(--color-header);   /* Color de fondo igual al header */
+}
+/* móviles (max-width: 480px) */
+@media (max-width: 480px) {
+    .Navegación {
+        max-width: 390px;                     /* Ancho máximo del nav */
+    }
+    /* Imagen del logo */
+    .Naveg_Logo img {
+        height: 30px;              /* Altura fija */
+        margin-bottom: 10px;       /* Margen externo de 10px en la parte inferior */
+        margin-right: 10px;        /* Margen externo de 10px en el lado derecho  */
+    }
+    /* Título al lado del logo */
+    .Naveg_Logo h1 {
+        font-size: 16px;                     /* Tamaño de fuente */
+        margin-top: 8px;                     /* Margen superior de 8px */
+    }
+    .Naveg_Link, .Naveg_Logo {
+        width: 100%;                          /* Cada uno ocupa el 100% del contenedor */
+        text-align: left;                  /* Alineación centrada */
+    }
+    .Naveg_Link a {
+        margin-left: 6px;                    /* Margen externo de 6px en el lado izquierdo */
+        font-size: 8px;                      /* Tamaño del texto */
+    }
+    /* Botón de login */
+    .Naveg_Link button {
+        padding: 5px 8px;                     /* Espaciado (superior e inferior 5px) y ( izquierda y derecha 8px)  */
+        font-size: 8px;                       /* Tamaño del texto */
+        border-radius: 4px;                    /* Bordes redondeados */
+    }
     .contenido p {
       padding: 15px;             /* Menos padding para que el texto quepa mejor */
       font-size: 16px;           /* Texto un poco más pequeño */
@@ -132,9 +175,41 @@ header {
       font-size: 18px;           /* Fuente un poco más pequeña */
       width: 90%;                /* Botón casi tan ancho como el contenedor */
     }
-  }
+    footer p {
+      font-size: 10px;           /* Texto más pequeño en el footer */
+    }
+}
   /* Pantallas medianas (tablets) */
-  @media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1199px) {
+        .Navegación {
+        max-width: 800px;                     /* Ancho máximo del nav */
+    }
+    /* Imagen del logo */
+    .Naveg_Logo img {
+        height: 60px;              /* Altura fija */
+        margin-bottom: 10px;       /* Margen externo de 10px en la parte inferior */
+        margin-right: 10px;        /* Margen externo de 10px en el lado derecho  */
+    }
+    /* Título al lado del logo */
+    .Naveg_Logo h1 {
+        font-size: 30px;                     /* Tamaño de fuente */
+        margin-top: 15px;                     /* Margen superior de 8px */
+    }
+    .Naveg_Link, .Naveg_Logo {
+        width: 100%;                       /* Cada uno ocupa el 100% del contenedor */
+        text-align: left;                  /* Alineación centrada */
+
+    }
+    .Naveg_Link a {
+        margin-left: 10px;                    /* Margen externo de 10px en el lado izquierdo */
+        font-size: 25px;                      /* Tamaño del texto */
+    }
+    /* Botón de login */
+    .Naveg_Link button {
+        padding: 9px 12px;                     /* Espaciado (superior e inferior 5px) y ( izquierda y derecha 8px)  */
+        font-size: 19px;                       /* Tamaño del texto */
+        border-radius: 4px;                    /* Bordes redondeados */
+    }
     .contenido p {
       padding: 20px 25px;        /* Padding intermedio */
       font-size: 18px;           /* Tamaño de fuente medio */
@@ -147,6 +222,5 @@ header {
         padding: 14px 25px;          /* Espaciado (superior e inferior 14px) y ( izquierda y derecha 25px) */
         font-size: 19px;             /* Tamaño de fuente medio */
         width: auto;                 /* El ancho se ajusta al contenido del botón, no ocupa todo el ancho disponible */
-      }
-  }
-  
+    }
+}
