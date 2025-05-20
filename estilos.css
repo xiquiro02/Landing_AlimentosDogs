@@ -1,0 +1,152 @@
+/* Se generar reglas globales eliminado márgenes y rellenos por defecto*/
+/* Selector universal: '*' aplica estas reglas a todos los elementos del documento */
+* {
+    margin: 0;                      /* Elimina cualquier margen predeterminado del navegador */
+    padding: 0;                     /*Elimina cualquier relleno interno predeterminado del navegador */
+    box-sizing: border-box;         /* Incluye padding y border en el tamaño total de los elementos, Más fácil de controlar el tamaño de los elementos */
+}
+/*  VARIABLES CSS (colores) */
+:root{
+    --color-header: #4CAF50;
+    --color-texto: black;
+    --color-boton: #FF9800;
+    --color-hover: blue;
+    --fondo: #F9F9F4;
+    --color-blanco: white;
+}
+body {
+    margin: 0 auto;                         /* Centra el contenido horizontalmente */
+    font-family: 'Poppins', sans-serif;     /* Fuente del texto  */
+    background-color: var(--fondo);        /* Color de fondo definido por variable */
+}
+header {
+    color: var(--color-texto);                   /* Color de texto del header */
+    background-color: var(--color-header);       /* Color de fondo del header */
+    padding: 20px;                               /* Espaciado interno */
+}
+.Navegación {
+    max-width: 1200px;                     /* Ancho máximo del nav */
+    margin: 0 auto;                        /* Centrado horizontal */
+    padding: 0 10px;                       /* Espaciado (superior e inferior 0) y ( izquierda y derecha 10px)  */
+    font-size: 0;                          /* Evita espacios entre elementos inline-block */
+}
+.Naveg_Logo, .Naveg_Link {
+    width: 50%;                           /* Cada uno ocupa la mitad del contenedor */
+    display: inline-block;                /* Alineación horizontal */
+}
+/* Estilos específicos para el contenedor de logo */
+.Naveg_Logo {
+    text-align: left;                     /* Alineación hacia la izquierda */
+    padding-left: 10px;                   /* Espacio entre el borde y el contenido */
+}
+/* Imagen del logo */
+.Naveg_Logo img {
+    height: 70px;                          /* Altura fija */
+    width: auto;                           /* Ancho se ajustará automáticamente  */
+    margin-right: 90px;                    /* Margen externo de 90px en el lado derecho  */
+}
+/* Título al lado del logo */
+.Naveg_Logo h1 {
+    font-family: Arial, Helvetica, sans-serif;   /* Fuente del texto */
+    font-size: 40px;                             /* Tamaño del texto */
+    display: inline-block;                       /* Para que aparezca junto a la imagen */
+    margin-left: 10px;                           /* Margen externo de 10px en el lado izquierdo */
+}
+.Naveg_Link {
+    text-align: right;                    /* Alineación de los links a la derecha */
+    padding-right: 10px;                  /* Espacio interno de 10px en el lado derecho */
+}
+.Naveg_Link a {
+    text-decoration: none;                /* Sin subrayado */
+    color: var(--color-texto);            /* Color de texto definido por variable */
+    margin-left: 20px;                    /* Margen externo de 20px en el lado izquierdo */
+    font-size: 25px;                      /* Tamaño del texto */
+}
+.Naveg_Link a:hover {
+    color: var(--color-hover);            /* Cambia de color al pasar el mouse */
+}
+/* Botón de login */
+.Naveg_Link button {
+    background-color: var(--color-boton);   /* Color del botón */
+    color: var(--color-blanco);             /*  Color del Texto blanco */
+    padding: 10px 20px;                     /* Espaciado (superior e inferior 10px) y ( izquierda y derecha 20px)  */
+    font-size: 18px;                        /* Tamaño del texto */
+    margin-left: 25px;                      /* Margen externo de 25px en el lado izquierdo */
+    cursor: pointer;                        /* Cursor tipo mano apuntando */
+    border-radius: 5px;                     /* Bordes redondeados */
+}
+/* Main */
+.contenido {
+    max-width: 90%;                             /* Ancho del contenedor responsivo */
+    height: 680px;                              /* Altura fija */
+    margin: 60px auto;                          /* Margen (arriba y abajo 60px) y (izquierda y derecha auto) */
+    padding: 0 15px;                            /* Espaciado (superior e inferior 0) y ( izquierda y derecha 15px) */
+    background-color: var(--color-blanco);        /* Fondo blanco */
+    border-radius: 10px;                          /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);  /* Sombra para efecto de tarjeta */
+}
+.contenido h2 {
+    text-align: center;                 /* Alineación centrada*/
+    font-size: 36px;                     /* Tamaño del texto */
+    padding: 20px;                     /* Relleno interno de 20px en todos los lados */
+    color: var(--color-header);          /* Color igual al header */
+}
+.contenido p {
+    padding: 30px;                       /* Espacio interno de 30px en todos los lados */
+    text-align: justify;                 /* Texto justificado */
+    font-size: 20px;                    /* Tamaño de fuente */
+    color: var(--color-texto);          /* Color del texto según variable CSS */
+}
+.contenido img {
+    max-width: 700px;                    /* Ancho máximo 700px */
+    height: auto;                        /* Altura se ajustará automáticamente  */
+    border-radius: 8px;                  /* Bordes redondeados */
+}
+.boton_buy {
+    display: block;                         /* El botón ocupa todo el ancho disponible */
+    margin: 30px;                           /* Margen externo de 30px alrededor */
+    background-color: var(--color-boton);   /* Color de fondo definido por variable CSS */
+    color: white;                         /* Color de Texto blanco */
+    padding: 15px 30px;                     /* Espaciado (superior e inferior 15px) y ( izquierda y derecha 30px) */
+    font-size: 20px;                        /* Tamaño de fuente de 20px */
+    border: none;                           /* Sin borde visible */
+    border-radius: 8px;                     /* Bordes redondeados */
+    cursor: pointer;                        /* Cursor tipo mano apuntando */
+}
+.boton_buy:hover {
+    background-color: var(--color-hover);       /* Cambia de color al pasar el mouse */
+}
+/* móviles (max-width: 768px) */
+@media (max-width: 768px) {
+    .contenido p {
+      padding: 15px;             /* Menos padding para que el texto quepa mejor */
+      font-size: 16px;           /* Texto un poco más pequeño */
+    }
+    .contenido img {
+      max-width: 100%;           /* Imagen ocupa el 100% del ancho del contenedor */
+      border-radius: 6px;        /* Bordes un poco menos redondeados */
+    }
+    .boton_buy {
+      margin: 20px auto;         /* Centrar botón con margen vertical reducido */
+      padding: 12px 20px;        /* Botón más pequeño para pantallas pequeñas */
+      font-size: 18px;           /* Fuente un poco más pequeña */
+      width: 90%;                /* Botón casi tan ancho como el contenedor */
+    }
+  }
+  /* Pantallas medianas (tablets) */
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .contenido p {
+      padding: 20px 25px;        /* Padding intermedio */
+      font-size: 18px;           /* Tamaño de fuente medio */
+    }
+    .contenido img {
+      max-width: 90%;            /* Imagen casi al 90% del contenedor */
+    }
+    .boton_buy {
+        margin: 25px auto;           /* Margen vertical de 25px y auto a los lados */
+        padding: 14px 25px;          /* Espaciado (superior e inferior 14px) y ( izquierda y derecha 25px) */
+        font-size: 19px;             /* Tamaño de fuente medio */
+        width: auto;                 /* El ancho se ajusta al contenido del botón, no ocupa todo el ancho disponible */
+      }
+  }
+  
